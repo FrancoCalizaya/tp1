@@ -1,0 +1,45 @@
+
+.center{
+	width: 800px;
+	background: #d2d2d2;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+
+}
+.center > T1{
+	text-align: center;
+	color: #000000;
+}
+form{
+	padding-bottom: 20px;
+}
+.add{
+	height: 30px;
+	display: block;
+	position: center;
+	background: #b8d1ff;
+}
+div > ul {
+	padding: 0;
+  list-style: none;
+}
+div >ul > li > input {
+	    margin-left: 20px;
+}
+div > ul > li {
+	display: block;
+padding: 10px;
+background: #99bede;
+cursor: pointer;
+}
+
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+  }
