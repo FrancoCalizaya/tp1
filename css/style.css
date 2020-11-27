@@ -1,0 +1,102 @@
+
+:-webkit-full-screen{
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    display: block;
+    width: 500px;
+    margin: 20px auto;
+}
+
+section > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li > input:checked + span{
+    color: crimson;
+    text-decoration: line-through;
+}
+
+section > ul > li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    padding: 10px 2px;
+    border: black 1px inset;
+    backgrourgb(0, 0, 0)color: #c6d3ff;
+}
+
+li > span{
+    display: inline-block;
+    padding: 0 5px;
+}
+
+li  >   a{
+    text-decoration: none;
+    color: black;
+    float: right;
+    padding: 0 5px;
+}
+li  >   a:hover{
+    text-decoration: none;
+    color: rgb(211, 211, 211);
+}
+
+
+li > span:hover{
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.icon{
+    display: block;
+    color: coral;
+    background-color: burlywood;
+}
+
+
+#name {
+    font-size: 20px;
+    width: 60%;
+    height: 40px;
+    padding: 5px 30px;
+    box-sizing: content-box;
+}
+.add{
+    background-color: white;
+    font-size: 20px;
+    height: 54px;
+    border: black 1px inset;
+    cursor: pointer;
+}
+.add:hover{
+    
+    background-color: blanchedalmond;
+}
+.full{
+    font-size: 46;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: -10px;
+    margin-left: 10px;
+    color: black;
+}
+.full:hover{
+    color: blanchedalmond;
+}
+
+.boxlist{
+    width: 550px;
+    margin: 20px auto;
+    min-height: 700px;
+    border: black 1px inset;
+}
+
+
+
+
+
