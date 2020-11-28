@@ -198,31 +198,36 @@ document.getElementById('task-list')
 	for (let i = 0; i < arrayTask.length; i++) {
 		ui.addTask(arrayTask[i]);
 	}
-	
-	//	SHARE NAVIGATION START 	//
+
+	/*		FULLSCREEN		*/
+
+	if (document.fullscreenEnabled) {
+
+		var btn = document.getElementById("fullscreen");
+		btn.addEventListener("click", function () {
+			if (!document.fullscreenElement) {					//	SI NO ESTA EN FULLSCREEN ENTRA
+				document.documentElement.requestFullscreen();	//	ACTIVA EL FULLSCREEN
+			} else {
+				document.exitFullscreen();						//	DESACTIVA EL FULLSCREEN
+			}
+		}, false);
+		
+		
+		document.addEventListener("fullscreenchange", function (event) {
+			//console.log(event);
+			if (!document.fullscreenElement) {					//	SI NO ESTA EN FULLSCREEN ENTRA
+				btn.className = "full icon-enlarge";			//	CAMBIA EL ICONO A 'enlarge'
+			} else {
+				btn.className = "full icon-shrink";				//	CAMBIA EL ICONO A 'shirnk'
+			}
+		});
+		
+		document.addEventListener("fullscreenerror", function (event) {
+			//console.log(event);
+		});
+	}
 
 
-	
-	  
-	  
-
-
-	//	SHARE NAVIGATION END	//
-
-	var element = document.getElementById('box');
-	var fullscreen = document.getElementById('fullscreen');
-	
-	fullscreen.addEventListener('click', function(){
-		if(element.requestFullscreen){
-			element.requestFullscreen;
-		}else if(element.webkitRequestFullscreen){
-			element.webkitRequestFullscreen;
-		}else if(element.mozRequestFullscreen){
-			element.mozRequestFullscreen;
-		}else if(element.msRequestFullscreen){
-			element.msRequestFullscreen;
-		}
-	});
 
 }());
 
