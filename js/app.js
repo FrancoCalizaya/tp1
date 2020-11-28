@@ -178,12 +178,31 @@ document.getElementById('task-list')
 	for (let i = 0; i < arrayTask.length; i++) {
 		ui.addTask(arrayTask[i]);
 	}
+	
+	//	SHARE NAVIGATION START 	//
 
-	if(navigator.canShare){
-		alert('HOLA')
-	}else{
-		alert('NO HAY NAVI')
-	}
+	const shareData = {
+		title: 'MDN',
+		text: 'Learn web development on MDN!',
+		url: 'https://developer.mozilla.org',
+	  }
+	  
+	  const btn = document.querySelector('button');
+	  const resultPara = document.querySelector('.result');
+	  
+	  // Must be triggered some kind of "user activation"
+	  btn.addEventListener('click', async () => {
+		try {
+		  await navigator.share(shareData)
+		  resultPara.textContent = 'MDN shared successfully'
+		} catch(err) {
+		  resultPara.textContent = 'Error: ' + err
+		}
+	  });
+
+
+	//	SHARE NAVIGATION END	//
+
 	var element = document.getElementById('box');
 	var fullscreen = document.getElementById('fullscreen');
 	
