@@ -76,7 +76,6 @@ class UI {
 
 
 	}
-
 	removeItemFromArr ( array, id ) {
 		var i;
 		for (let j = 0; j < array.length; j++) {			
@@ -92,7 +91,29 @@ class UI {
 			array.splice( i, 1 );			//	BORRADO DEL ARREGLO 'arrayTask'
 		}
 	}
+	share(element){
+		const shareData = {
+			title: 'Tareas de Walter',
+			text: 'Learn web development on MDN!',
+			url: 'https://francocalizaya.github.io/tp1/',
+		}
+		
+		const resultPara = document.querySelector('.result');
+		if(element.name === 'share'){
+			alert('entro')
+			element.addEventListener('click', () => {
+				navigator.share(shareData)
+				  .then(() =>
+					resultPara.textContent = 'MDN shared successfully'
+				  )
+				  .catch((e) =>
+					resultPara.textContent = 'Error: ' + e
+				  )
+			  });
 
+		}
+
+	}
 }
 
 //	LOCALSTORAGE
@@ -156,10 +177,9 @@ document.getElementById('task-list')
 	//console.log(e.target)
 	ui.deletTask(e.target); //PASO EL EVENTO e
 	ui.clipboardTask(e.target);
+	ui.share(e.target);
 
 });
-
-
 
 	const ui = new UI();
 	// VERIFICAR SI EXISTE DATOS EL LOCAL STORAGE DE 'Datos'
@@ -181,24 +201,10 @@ document.getElementById('task-list')
 	
 	//	SHARE NAVIGATION START 	//
 
-	const shareData = {
-		title: 'MDN',
-		text: 'Learn web development on MDN!',
-		url: 'https://developer.mozilla.org',
-	  }
+
+	
 	  
-	  const btn = document.querySelector('button');
-	  const resultPara = document.querySelector('.result');
 	  
-	  // Must be triggered some kind of "user activation"
-	  btn.addEventListener('click', async () => {
-		try {
-		  await navigator.share(shareData)
-		  resultPara.textContent = 'MDN shared successfully'
-		} catch(err) {
-		  resultPara.textContent = 'Error: ' + err
-		}
-	  });
 
 
 	//	SHARE NAVIGATION END	//
