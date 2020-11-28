@@ -4,6 +4,10 @@
     height: 100%;
 }
 
+:-moz-full-screen{
+    background-color: white;
+}
+
 section {
     display: block;
     width: 500px;
@@ -26,7 +30,7 @@ section > ul > li {
     margin-bottom: 20px;
     padding: 10px 2px;
     border: black 1px inset;
-    backgrourgb(0, 0, 0)color: #c6d3ff;
+    background-color: #c6d3ff;
 }
 
 li > span{
@@ -77,11 +81,14 @@ li > span:hover{
     
     background-color: blanchedalmond;
 }
-.full{
-    font-size: 46;
+.full {
+    font-size: 25px;
+    padding: 12;
+    background: white;
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    vertical-align: -10px;
+    vertical-align: -4px;
     margin-left: 10px;
     color: black;
 }
@@ -91,7 +98,7 @@ li > span:hover{
 
 .boxlist{
     width: 550px;
-    margin: 20px auto;
+    margin: 60px auto;
     min-height: 700px;
     border: black 1px inset;
 }
