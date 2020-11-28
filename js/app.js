@@ -92,15 +92,18 @@ class UI {
 		}
 	}
 	share(element){
+		let parent = element.parentElement;
+		let ID = parent.firstElementChild.nextElementSibling.id;
+		var stringID = ID.toString();
+		
 		const shareData = {
 			title: 'Tareas de Walter',
-			text: 'Learn web development on MDN!',
+			text: document.getElementById(stringID).innerHTML,
 			url: 'https://francocalizaya.github.io/tp1/',
 		}
-		
-		const resultPara = document.querySelector('.result');
+		console.log(stringID)
+		//const resultPara = document.querySelector('.result');
 		if(element.name === 'share'){
-			alert('entro')
 			element.addEventListener('click', () => {
 				navigator.share(shareData)
 				  .then(() =>
@@ -112,8 +115,6 @@ class UI {
 			  });
 
 		}
-
-	}
 }
 
 //	LOCALSTORAGE
