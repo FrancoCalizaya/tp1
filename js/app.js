@@ -95,32 +95,28 @@ class UI {
 		//const resultPara = document.querySelector('.result');
 		if(element.name === 'share'){
 			
-		let parent = element.parentElement;
-		let ID = parent.firstElementChild.nextElementSibling.id;
-		var stringID = ID.toString();
+			let parent = element.parentElement;
+			let ID = parent.firstElementChild.nextElementSibling.id;
+			var stringID = ID.toString();
 
-		const shareData = {
-			title: 'Tareas de Walter',
-			text: document.getElementById(stringID).innerHTML,
-			url: 'https://francocalizaya.github.io/tp1/',
-		}
-		console.log(document.getElementById(stringID).innerHTML)
-			element.addEventListener('click', () => {
-				navigator.share(shareData)
-				  .then(() =>
-					resultPara.textContent = 'MDN shared successfully'
-				  )
-				  .catch((e) =>
-					resultPara.textContent = 'Error: ' + e
-				  )
-			  });
+			const shareData = {
+				title: 'Tareas de Walter',
+				text: document.getElementById(stringID).innerHTML,
+				url: 'https://francocalizaya.github.io/tp1/',
+			}
+			if (navigator.share) {
+			navigator.share(shareData).then(() => {
+				console.log('Thanks for sharing!');
+			}).catch(console.error);
+			} else {
+				// fallback
+			}
 
-		}
-
+		}	
 	}
 }
-
 //	LOCALSTORAGE
+
 class LocalStorage{
 	saveLocal(){
 		//if(localStorage.getItem("nombre")){
