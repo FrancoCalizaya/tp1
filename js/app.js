@@ -92,19 +92,19 @@ class UI {
 		}
 	}
 	share(element){
-		
 		//const resultPara = document.querySelector('.result');
 		if(element.name === 'share'){
+			
 		let parent = element.parentElement;
 		let ID = parent.firstElementChild.nextElementSibling.id;
 		var stringID = ID.toString();
-		
+
 		const shareData = {
 			title: 'Tareas de Walter',
 			text: document.getElementById(stringID).innerHTML,
 			url: 'https://francocalizaya.github.io/tp1/',
 		}
-		console.log(stringID)
+		console.log(document.getElementById(stringID).innerHTML)
 			element.addEventListener('click', () => {
 				navigator.share(shareData)
 				  .then(() =>
@@ -116,6 +116,8 @@ class UI {
 			  });
 
 		}
+
+	}
 }
 
 //	LOCALSTORAGE
