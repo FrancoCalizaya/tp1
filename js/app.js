@@ -92,6 +92,9 @@ class UI {
 		}
 	}
 	share(element){
+		
+		//const resultPara = document.querySelector('.result');
+		if(element.name === 'share'){
 		let parent = element.parentElement;
 		let ID = parent.firstElementChild.nextElementSibling.id;
 		var stringID = ID.toString();
@@ -102,8 +105,6 @@ class UI {
 			url: 'https://francocalizaya.github.io/tp1/',
 		}
 		console.log(stringID)
-		//const resultPara = document.querySelector('.result');
-		if(element.name === 'share'){
 			element.addEventListener('click', () => {
 				navigator.share(shareData)
 				  .then(() =>
